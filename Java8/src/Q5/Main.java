@@ -1,14 +1,14 @@
 package Q5;
- public class Main  implements Interf1,Interf2{
 
-    @Override
-    public void abc() {
-        Interf1.super.abc();
-        Interf2.super.abc();
+import java.util.function.IntPredicate;
+
+public class Main {
+
+    void m1(){
+        System.out.println("m1hello");
     }
-
         public static void main(String[] args) {
-            Main main = new Main();
-            main.abc();
+            Interf1 interf1 = new Main()::m1;
+
         }
     }
