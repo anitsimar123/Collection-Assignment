@@ -5,39 +5,35 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class TestDeadlockExample1 {
     public static void main(String[] args) {
-        
-        ReentrantLock re = new ReentrantLock();
+        final Object resource1 = new Object();
+        final Object resource2 = new Object();
         // t1 tries to lock resource1 then resource2
         Thread t1 = new Thread() {
             public void run() {
-
-                re.lock();
+                synchronized (resource1) {
                     System.out.println("Thread 1: locked resource 1");
 
-                    try { Thread.sleep(100);}
-                    catch (Exception e) {
+                    try { Thread.sleep(100);} catch (Exception e) {}
 
-                    }
-
-                    re.lock();
+                    synchronized (resource2) {
                         System.out.println("Thread 1: locked resource 2");
-                    re.unlock();
-                re.unlock();
+                    }
+                }
             }
         };
 
         // t2 tries to lock resource2 then resource1
         Thread t2 = new Thread() {
             public void run() {
-                re.lock();
+                synchronized (resource2) {
                     System.out.println("Thread 2: locked resource 2");
 
                     try { Thread.sleep(100);} catch (Exception e) {}
 
-                    re.lock();
+                    synchronized (resource1) {
                         System.out.println("Thread 2: locked resource 1");
-                    re.unlock();
-                re.unlock();
+                    }
+                }
             }
         };
 
@@ -46,3 +42,5 @@ public class TestDeadlockExample1 {
         t2.start();
     }
 }
+
+
