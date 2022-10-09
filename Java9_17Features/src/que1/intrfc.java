@@ -12,6 +12,4 @@ public interface intrfc {
             privateMethod();
             System.out.println("Method 2");
         }
-
-         int hashCode();
 }

@@ -41,7 +41,7 @@ public class ICICI extends Bank {
             } catch (FileNotFoundException e) {
                 System.out.println("File not Found");
             } catch (IOException e) {
-                System.out.println("Error Occurr ed");
+                System.out.println("Error Occurred");
             }
         }
 }

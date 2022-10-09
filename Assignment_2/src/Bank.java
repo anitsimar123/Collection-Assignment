@@ -19,7 +19,7 @@ public abstract class Bank{
         System.out.println("INTEREST RATE: "+rateOfInterest);
         System.out.println("ACCOUNT NUMBER: "+accNumber);
         System.out.println("BALANCE: "+balance);
-        System.out.println("");
+        System.out.println("TYPE: "+t);
 
     }
 

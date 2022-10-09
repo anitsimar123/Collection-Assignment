@@ -2,12 +2,11 @@ import java.io.*;
 
 public class BOI extends Bank{
     public BOI( long accNumber, double balance) {
-        this.ifsc = "BOB0000039";
-        this.bankName = "BOB";
+        this.ifsc = "BOI0000039";
+        this.bankName = "BOI";
         this.rateOfInterest = 3.25;
         this.balance = balance;
         this.accNumber = accNumber;
-        this.t=accType.CURRENT;
     }
     @Override
     public void saveToFile(String s) {
@@ -21,14 +20,14 @@ public class BOI extends Bank{
             b.newLine();
             b.close();
         } catch (IOException e) {
-            System.out.println("Error Occured");
+            System.out.println("Error Occurred");
         }
 
     }
 
     @Override
     public void readFile() {
-        System.out.println("\nBOB BANK LOGS: ");
+        System.out.println("\nBOI BANK LOGS: ");
         try(BufferedReader b=new BufferedReader(new FileReader( "files/"+bankName+".txt"))){
             String line;
             while((line=b.readLine())!=null){
