@@ -7,6 +7,6 @@ import java.util.stream.IntStream;
 public class ThreadImplement extends Thread{
     @Override
     public void run() {
-        IntStream.range(0,10).forEach(System.out::println);
+        IntStream.rangeClosed(1,10).forEach(System.out::println);
     }
 }

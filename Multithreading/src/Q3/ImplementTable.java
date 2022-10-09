@@ -11,5 +11,6 @@ public class ImplementTable extends Thread{
     @Override
     public void run() {
       table.table(number);
+      table.counting();
     }
 }

@@ -5,16 +5,14 @@ public class Main {
      ThreadImplement threadImplement = new ThreadImplement();
      RunnableImplement runnableImplement = new RunnableImplement();
 
-     threadImplement.start();
 
+        Thread thread = new Thread(runnableImplement);
+        thread.start();
 
-        System.out.println("First Thread");
-        threadImplement.join();
-        Thread.sleep(5000);
-        System.out.println("Second Thread");
-
-     Thread thread = new Thread(runnableImplement);
-     thread.start();
+        System.out.println("Thread created using Runnable");
+        thread.join();
+        System.out.println("Second Thread created using Thread class");
+        threadImplement.start();
 
     }
 }
