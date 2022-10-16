@@ -44,10 +44,10 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>org.exampssle.Main</mainClass>
+                            <mainClass>org.example.Main</mainClass>
                         </manifest>
                     </archive>
-                </configuration>s
+                </configuration>
             </plugin>
         </plugins>
     </build>
